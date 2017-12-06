@@ -100,4 +100,8 @@ class IndexController extends Controller
     public function snake(){
         return view('home.snake');
     }
+
+    public function test(){
+        return 123;
+    }
 }

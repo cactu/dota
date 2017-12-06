@@ -5,10 +5,11 @@ namespace App\Http\Models\Admin;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Model
+class AdminUser extends Model
 {
-    use SoftDeletes;
+    protected $hidden = ['pass'];
     /*protected $table = 'users';*/
+    use SoftDeletes;
     protected $guarded = ['id'];
     protected $dates = ['deleted_at'];
 }

@@ -18,7 +18,9 @@ Route::group([
     Route::get('/','IndexController@index');                    //前台首页
     Route::get('index','IndexController@index');                //前台首页
     Route::get('snake','IndexController@snake');                //彩蛋-贪吃蛇
-
+    Route::get('mail','IndexController@mail');                  //邮件
+    Route::get('login','IndexController@login');                //登录页面
+    Route::post('login-do','IndexController@loginDo');          //登录操作
 });
 
 

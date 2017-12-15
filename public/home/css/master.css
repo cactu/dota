@@ -1,31 +1,24 @@
-body, html { font-size: 100%; 	padding: 0; margin: 0;}
-
-/* Reset */
-*,
-*:after,
-*:before {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+/* 导航条 */
+.navbar{
+    background-color:white;
+    border-top:none;
+    border-left:none;
+    border-right:none;
 }
-
-/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
-.clearfix:before,
-.clearfix:after {
-	content: " ";
-	display: table;
+/* 用户头像 */
+#user-img{
+    padding:5px 15px;
 }
-
-.clearfix:after {
-	clear: both;
+/* 导航条的下拉菜单 */
+.dropdown-menu{
+    min-width:100%;
+    text-align:center;
 }
-
-body{
-	background: #fff;
-	color: #D5D6E2;
-	font-weight: 500;
-	font-size: 1.05em;
-	font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif;
+/* 页脚 */
+.footer{
+    margin-top:150px;
+    text-align:center;
 }
-a{ color: rgba(255, 255, 255, 0.6);outline: none;text-decoration: none;-webkit-transition: 0.2s;transition: 0.2s;}
-a:hover,a:focus{color:#74777b;text-decoration: none;}
+.footer a{
+    text-decoration:none;
+}

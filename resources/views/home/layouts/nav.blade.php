@@ -1,48 +1,109 @@
 <!-- 导航条 -->
-<div class="demo" style="padding: 0em 0;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-default navbar-mobile bootsnav">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbar-menu">
-                        <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li><a href="#">首页</a></li>
-                            <li><a href="#">最新报道</a></li>
-                            <li><a href="#">一周要闻</a></li>
-                            <li><a href="#">往期经典</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">联系我们</a>
-                                <ul class="dropdown-menu" style="width:100%;">
-                                    <li><a href="#">邮件发送</a></li>
-                                    <li><a href="#">手机发送</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+<div class="header row">
+    <nav class="navbar navbar-default col-md-8 col-md-offset-2">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand active" href="#">DOTA</a>
+            </div>
 
-                        <ul class="nav navbar-nav navbar-right">
-                            @if(Session::has('home'))
-                                <li class="dropdown" style="">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" alt="{{asset('home/icon/76.png')}}"
-                                       aria-haspopup="true" aria-expanded="false" style="padding:20px 30px;"><img  src="{{asset('home/icon/76.png')}}" title="{{Session::get('home')->name}}" style="height:40px;border-radius:20px;"></a>
-                                    <ul class="dropdown-menu" style="width:100%;">
-                                        <li><a href="#">个人中心</a></li>
-                                        <li><a href="#">系统通知</a></li>
-                                        <li><a href="#">退出登录</a></li>
-                                        <li><a href="#">退出登录</a></li>
-                                    </ul>
-                                </li>
-                            @else
-                                <li><a href="#">登录</a></li>
-                                <li><a href="#">注册</a></li>
-                            @endif
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">最新报道</a></li>
+                    <li><a href="#">一周要闻</a></li>
+                    <li><a href="#">往期经典</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">联系我们<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">邮箱</a></li>
+                            <li><a href="#">手机</a></li>
+                            <li><a href="#">腾讯</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">微博</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">微信</a></li>
                         </ul>
-                    </div>
-                </nav>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="请输入关键词">
+                        </div>
+                        <button type="submit" class="btn btn-default"><span class="fa fa-search"></span>搜索</button>
+                    </form>
+                    @if(Session::has('home'))
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" id="user-img" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <img  src="{{asset('home/image/icon.jpeg')}}" title="{{Session::get('home')->name}}" style="height:40px;border-radius:20px;">
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">个人中心</a></li>
+                                <li><a href="#">系统通知</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{url('login-out')}}">退出登录</a></li>
+                            </ul>
+                        </li>
+                    @else
+                        <li><a href="javascript:;" data-toggle="modal" data-target="#myModal">登录</a></li>
+                        <li><a href="{{url('register')}}">注册</a></li>
+                    @endif
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-xs-3" style="padding-right:0;border-right:none;">
+                                <select class="form-control btn-primary" style="text-align:center;!important;">
+                                    <option>手机注册</option>
+                                    <option>邮箱注册</option>
+                                    <option>微信注册</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-9" style="padding-left:0;">
+                                <div class="input-group">
+                                    <div class="input-group-addon">+86</div>
+                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入手机号码">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-3" style="padding-right:0;border-right:none;">
+                                <button class="btn btn-primary form-control" style="">获取验证码</button>
+                            </div>
+                            <div class="col-xs-9" style="padding-left:0;">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="请输入验证码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>

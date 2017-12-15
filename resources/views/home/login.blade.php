@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="App Loction Form,Login Forms,Sign up Forms" />
+    <link rel="icon" href="{{asset('home/image/icon.jpeg')}}" type="image/x-icon"/>
 </head>
 <body>
 <div class="app-location">
@@ -33,7 +34,7 @@
     @endif
 </div>
 
-<div class="copy-right">
+<div class="copy-right" style="margin-top:150px;">
     <p>Copyright &copy; 学意 <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备17009528号-1</a></p>
 </div>
 

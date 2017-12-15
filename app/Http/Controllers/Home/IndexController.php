@@ -19,7 +19,7 @@ class IndexController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * 首页
      */
-    public function index(Request $request){
+    public function index(){
         return view('home.index');
     }
 
@@ -49,6 +49,16 @@ class IndexController extends Controller
         }else{
             return redirect()->back()->withInput()->with(['message'=>['用户名或者密码错误!']]);
         }
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * 退出登录
+     */
+    public function loginOut(Request $request){
+        $request->session()->forget('home');
+        return redirect()->back();
     }
 
 
@@ -101,6 +111,10 @@ class IndexController extends Controller
         return view('home.snake');
     }
 
+    /**
+     * @return int
+     * 测试方式
+     */
     public function test(){
         return 123;
     }

@@ -3,57 +3,59 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>后台管理</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="icon" href="{{asset('home/icon/76.png')}}" type="image/x-icon"/>
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}"/>
-    <!-- Fonts from Font Awsome -->
-    <link href="{{asset('admin/css/font-awesome.min.css')}}" rel="stylesheet"/>
-    <!-- CSS Animate -->
-    <link rel="stylesheet" href="{{asset('admin/css/animate.css')}}">
-    <!-- Custom styles for this theme -->
-    <link rel="stylesheet" href="{{asset('admin/css/main.css')}}">
-    <!--[if lt IE 9]>
-    <script src="{{asset('admin/js/html5shiv.js')}}"></script>
-    <script src="{{asset('admin/js/respond.min.js')}}"></script>
-    <![endif]-->
+    <title>{{$title}}</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/bower_components/Ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/dist/css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/dist/css/skins/_all-skins.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/bower_components/morris.js/morris.css')}}">
+    <link rel="stylesheet"
+          href="{{asset('admin/AdminLTE/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet"
+          href="{{asset('admin/AdminLTE/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+
 </head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
 
-<body>
-<section id="container">
+    @include('admin.layouts.header')
 
-    @include('admin.layouts.bar')
+    @include('admin.layouts.left')
 
-    @include('admin.layouts.nav')
+    @include('admin.layouts.main')
 
-    <!--主体部分-->
-    <section class="main-content-wrapper">
-        <section id="main-content">
-            <!--ToDo start-->
-            <div class="row">
+    @include('admin.layouts.footer')
 
-                <!-- 消息提示框 -->
-                @if(Session::has('msg'))
-                <div class="container col-md-12">
-                    <div class="alert alert-{{ Session::get('msg')['type'] }} alert-dismissible" role="alert" >
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <i class="fa fa-info-circle"></i> {{ Session::get('msg')['txt'] }}
-                    </div>
-                </div>
-                @endif
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
 
-                @yield('main')
-            </div>
-        </section>
-    </section>
-</section>
+</div>
 
-<!--Global JS-->
-<script src="{{asset('admin/js/jquery.min.js')}}"></script>
-<script src="{{asset('admin/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('admin/js/application.js')}}"></script>
-
+<script src="{{asset('admin/AdminLTE/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<script src="{{asset('admin/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/bower_components/raphael/raphael.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/bower_components/morris.js/morris.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/bower_components/jquery-knob/dist/jquery.knob.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/bower_components/moment/min/moment.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/bower_components/fastclick/lib/fastclick.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/dist/js/adminlte.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/dist/js/pages/dashboard.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/dist/js/demo.js')}}"></script>
 </body>
 </html>

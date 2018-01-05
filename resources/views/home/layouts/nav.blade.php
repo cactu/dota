@@ -62,40 +62,35 @@
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style="max-width:400px;">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    <h4 class="modal-title" id="myModalLabel">登录</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body row">
                     <form class="form-horizontal">
                         <div class="form-group">
-                            <div class="col-xs-3" style="padding-right:0;border-right:none;">
-                                <select class="form-control btn-primary" style="text-align:center;!important;">
-                                    <option>手机注册</option>
-                                    <option>邮箱注册</option>
-                                    <option>微信注册</option>
+                            <div class="col-xs-3 col-xs-offset-1" style="padding-right:0;border-right:none;">
+                                <select class="form-control btn-default login-select">
+                                    <option value="1">手机注册</option>
+                                    <option value="2">邮箱注册</option>
+                                    {{--<option value="3">微信注册</option>--}}
                                 </select>
                             </div>
-                            <div class="col-xs-9" style="padding-left:0;">
+                            <div class="col-xs-7 login-name" style="padding-left:0;">
                                 <div class="input-group">
                                     <div class="input-group-addon">+86</div>
-                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入手机号码">
+                                    <input type="text" class="form-control" placeholder="请输入手机号码">
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-xs-3" style="padding-right:0;border-right:none;">
-                                <button class="btn btn-primary form-control" style="">获取验证码</button>
+                        <div class="form-group login-pass">
+                            <div class="col-xs-3 col-xs-offset-1" style="padding-right:0;border-right:none;">
+                                <button class="btn btn-default form-control" id="get-code" style="">获取验证码</button>
                             </div>
-                            <div class="col-xs-9" style="padding-left:0;">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="请输入验证码">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">Sign in</button>
+                            <div class="col-xs-7" style="padding-left:0;">
+                                <input type="text" class="form-control" placeholder="请输入验证码">
                             </div>
                         </div>
                     </form>

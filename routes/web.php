@@ -11,6 +11,7 @@
 |
 */
 
+
 /* 前台系统 */
 Route::group([
     'namespace' => 'Home'
@@ -29,7 +30,7 @@ Route::group([
 /* 后台用户的登录 */
 Route::group([
     'prefix' => 'admin',
-    'namespace' => 'Admin\\Login\\',
+    'namespace' => 'Admin\Login',
 ],function(){
     Route::get('login','LoginController@index');                //登录首页
     Route::post('login-do','LoginController@loginDo');          //登录操作

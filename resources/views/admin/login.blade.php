@@ -4,38 +4,53 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>后台登录</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <link rel="icon" href="{{asset('home/icon/76.png')}}" type="image/x-icon"/>
-    <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}"/>
-    <link href="{{asset('admin/css/login.css')}}" rel='stylesheet' type='text/css'/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/bower_components/Ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/dist/css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/AdminLTE/plugins/iCheck/square/blue.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-
-<body>
-
-
-<div class="login-form">
-    <div class="clear"> </div>
-    <div class="avatar">
-        <img src="{{asset('admin/image/login-avatar.png')}}" />
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="javascript:;">后台管理系统</a>
     </div>
-    <form method="post" action="login-do">
-        {{csrf_field()}}
-        <input type="text" name="name" class="text" value="{{old('name')}}" placeholder="请输入用户名">
-        <div class="key">
-            <input type="password" name="password" value="{{old('password')}}" placeholder="请输入密码">
-        </div>
-
-        <div class="sign-in"><input type="submit" value="点击登录" />
-        </div>
-    </form>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <form action="login-do" method="post">
+            {{csrf_field()}}
+            <div class="form-group has-feedback">
+                <input name="name" type="text" value="{{old('name')}}" class="form-control" placeholder="用户名">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input name="password" type="password" value="{{old('password')}}" class="form-control" placeholder="密码">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
 </div>
-<div class="copy-rights">
-    <p>Copyright &copy; 学意 <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备17009528号-1</a></p>
-</div>
 
-<script src="{{asset('admin/js/jquery.min.js')}}"></script>
-<script src="{{asset('admin/js/bootstrap.min.js')}}"></script>
+
+<script src="{{asset('admin/AdminLTE/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin/AdminLTE/plugins/iCheck/icheck.min.js')}}"></script>
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+    });
+</script>
 </body>
 </html>
